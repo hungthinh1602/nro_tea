@@ -1,0 +1,140 @@
+package models.boss.boss_list.DestronGas;
+
+/*
+ * @Author: DienCoLamCoi
+ * @Description: Điện Cơ Lâm Còi - Chuyên cung cấp thiết bị điện cơ uy tín chất lượng cao.
+ * @Group Zalo: Giao lưu chia sẻ kinh nghiệm code - https://zalo.me/g/lsqfzx907
+ */
+
+
+import consts.BossID;
+import consts.BossStatus;
+import consts.ConstPlayer;
+import managers.boss.GasDestroyManager;
+import models.boss.*;
+import static consts.BossType.PHOBANKGHD;
+import models.clan.Clan;
+import models.item.Item;
+import models.map.ItemMap;
+import models.map.Zone;
+import models.player.Player;
+import services.EffectSkillService;
+import models.skill.Skill;
+import services.Service;
+import services.map.ChangeMapService;
+import utils.Util;
+
+public class Hatchiyack extends Boss {
+
+    private final int level;
+    private Clan clan;
+
+    private static final int[][] FULL_DEMON = new int[][]{{Skill.DEMON, 1}, {Skill.DEMON, 2}, {Skill.DEMON, 3}, {Skill.DEMON, 4}, {Skill.DEMON, 5}, {Skill.DEMON, 6}, {Skill.DEMON, 7}};
+
+    public Hatchiyack(Zone zone, Clan clan, int level, int dame, int hp) throws Exception {
+        super(PHOBANKGHD, BossID.HATCHIYACK, new BossData(
+                " ",
+                ConstPlayer.TRAI_DAT,
+                new short[]{639, 640, 641, -1, -1, -1},
+                (dame),
+                new int[]{hp},
+                new int[]{148},
+                (int[][]) Util.addArray(FULL_DEMON),
+                new String[]{"|-1|Các ngươi dám hạ sư phụ ta",
+                    "|-1|Ta sẽ tiêu diệt hết các ngươi"},
+                new String[]{"|-1|Đại bác báo thù...",
+                    "|-1|Heyyyyyyyy Yaaaaa"},
+                new String[]{"|-1|Các ngươi khó mà rời khỏi nơi đây"},
+                60
+        ));
+        this.zone = zone;
+        this.level = level;
+        this.clan = clan;
+    }
+
+    @Override
+    public synchronized int injured(Player plAtt, long damage, boolean piercing, boolean isMobAttack) {
+        if (!this.isDie()) {
+            if (plAtt != null && plAtt.idNRNM != -1) {
+                return 1;
+            }
+
+            damage = this.nPoint.subDameInjureWithDeff(damage + Util.nextInt(-200 * this.level, 0));
+
+            damage -= damage / 100 * (this.level / 5);
+
+            if (!piercing && effectSkill.isShielding) {
+                if (damage > nPoint.hpMax) {
+                    EffectSkillService.gI().breakShield(this);
+                }
+                damage = 1;
+            }
+
+            this.nPoint.subHP(damage);
+
+            if (isDie()) {
+                this.setDie(plAtt);
+                die(plAtt);
+            }
+
+            return (int) damage;
+        } else {
+            return 0;
+        }
+    }
+
+    @Override
+    public void reward(Player plKill) {
+        dropCt(0);
+        for (int i = 0; i < this.zone.getNumOfPlayers(); i++) {
+            int x = (i + 1) * 50;
+            dropCt(x);
+            dropCt(-x);
+        }
+    }
+
+    private void dropCt(int x) {
+        try {
+            ItemMap it = new ItemMap(zone, 729, 1, this.location.x + x, this.zone.map.yPhysicInTop(this.location.x,
+                    this.location.y - 24), -1);
+            it.options.clear();
+            it.options.add(new Item.ItemOption(50, Util.nextInt(20, 25)));
+            it.options.add(new Item.ItemOption(77, Util.nextInt(20, 25)));
+            it.options.add(new Item.ItemOption(103, Util.nextInt(20, 25)));
+            it.options.add(new Item.ItemOption(5, Util.nextInt(10, 15)));
+            it.options.add(new Item.ItemOption(93, Util.nextInt(1,15)));
+            it.options.add(new Item.ItemOption(30, 0));
+            Service.gI().dropItemMap(this.zone, it);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void joinMap() {
+        ChangeMapService.gI().changeMap(this, this.zone, 480, 295);
+        this.moveTo(480, 480);
+        this.changeStatus(BossStatus.CHAT_S);
+    }
+
+    @Override
+    public void die(Player plKill) {
+        if (plKill != null) {
+            reward(plKill);
+        }
+        this.changeStatus(BossStatus.DIE);
+    }
+
+    @Override
+    public void leaveMap() {
+        if (clan != null && clan.KhiGasHuyDiet != null) {
+            clan.KhiGasHuyDiet.hatchiyatchDead = true;
+        }
+        ChangeMapService.gI().exitMap(this);
+        this.lastZone = null;
+        this.lastTimeRest = System.currentTimeMillis();
+        this.changeStatus(BossStatus.REST);
+        GasDestroyManager.gI().removeBoss(this);
+        this.dispose();
+    }
+}
