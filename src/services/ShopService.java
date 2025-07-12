@@ -782,6 +782,15 @@ public class ShopService {
                     isBuy = false;
                 }
                 break;
+            case 77:
+                if (pl.inventory.gem >= buySpec) {
+                    pl.inventory.gem -= buySpec;
+                    isBuy = true;
+                } else {
+                    Service.gI().sendThongBao(pl, "Bạn Không Đủ Ngọc Xanh Để Mua Vật Phẩm");
+                    isBuy = false;
+                }
+                break;
             default:
                 if (InventoryService.gI().findItemBag(pl, itSpec) == null || !InventoryService.gI().findItemBag(pl, itSpec).isNotNullItem()) {
                     Service.gI().sendThongBao(pl, "Không tìm thấy " + itS.template.name);
@@ -1028,7 +1037,7 @@ public class ShopService {
                     case 4:
                         HaveNhan = true;
                         break;
-                }                                                                 
+                }
             }
         }
 

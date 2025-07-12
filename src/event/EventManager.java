@@ -22,15 +22,15 @@ public class EventManager {
 
     public static boolean LUNNAR_NEW_YEAR = true;
 
-    public static boolean INTERNATIONAL_WOMANS_DAY = true;
+    public static boolean INTERNATIONAL_WOMANS_DAY = false;
 
-    public static boolean CHRISTMAS = true;
+    public static boolean CHRISTMAS = false;
 
     public static boolean HALLOWEEN = false;
 
-    public static boolean HUNG_VUONG = true;
+    public static boolean HUNG_VUONG = false;
 
-    public static boolean TRUNG_THU = true;
+    public static boolean TRUNG_THU = false;
 
     public static boolean TOP_UP = true;
 

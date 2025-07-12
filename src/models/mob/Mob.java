@@ -840,8 +840,16 @@ public class Mob {
             list.add(new ItemMap(zone, 20, 1, x, yEnd, player.id));
         }
         //Úp quái rơi ngọc
-        if (Util.isTrue(1, 1000) || (player.isActive() && Util.isTrue(1, 20))) {
-            list.add(new ItemMap(zone, 77, 100, x, yEnd, player.id));
+        if (Util.isTrue(2, 10000) || (player.isActive() && Util.isTrue(2, 1000))) {
+            list.add(new ItemMap(zone, 77, 1, x, yEnd, player.id));
+        }
+        //1188: trang giay cũ
+        if (Util.isTrue(2, 5000) || (player.isActive() && Util.isTrue(5, 1000))) {
+            list.add(new ItemMap(zone, 1188, 1, x, yEnd, player.id));
+        }
+        //1191: bí kiếp
+        if (Util.isTrue(2, 5000) || (player.isActive() && Util.isTrue(1, 2000))) {
+            list.add(new ItemMap(zone, 1191, 1, x, yEnd, player.id));
         }
 //        if (Util.isTrue(1, 10000) || (player.isActive() && Util.isTrue(1, 2000))) {
 //            list.add(new ItemMap(zone, 861, 1, x, yEnd, player.id));

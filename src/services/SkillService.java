@@ -974,15 +974,15 @@ public class SkillService {
             if (plAtt.isPl() && plAtt.effectSkin != null && plAtt.effectSkin.isXDame) {
                 plAtt.effectSkin.isXDame = false;
             }
-//            if ((plAtt.charms != null && plAtt.charms.tdBatTu > System.currentTimeMillis() || plAtt.effectSkill != null && plAtt.effectSkill.isHalloween) && plAtt.nPoint.hp <= 1) {
-//                if (plAtt.nPoint.hp < 1) {
-//                    plAtt.nPoint.hp = 1;
-//                }
-//                if (!plAtt.isPet) {
-//                    dameHit = 0;
-//                    Service.gI().sendThongBao(plAtt, "Bạn đang được bùa bất tử bảo vệ không thể tấn công!");
-//                }
-//            }
+            if ((plAtt.charms != null && plAtt.charms.tdBatTu > System.currentTimeMillis() || plAtt.effectSkill != null && plAtt.effectSkill.isHalloween) && plAtt.nPoint.hp <= 1) {
+                if (plAtt.nPoint.hp < 1) {
+                    plAtt.nPoint.hp = 1;
+                }
+                if (!plAtt.isPet) {
+                    dameHit = 0;
+                    Service.gI().sendThongBao(plAtt, "Bạn đang được bùa bất tử bảo vệ không thể tấn công!");
+                }
+            }
             if (plAtt.charms != null && plAtt.charms.tdManhMe > System.currentTimeMillis()) {
                 dameHit += (dameHit * 150 / 100);
             }

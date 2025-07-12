@@ -70,7 +70,7 @@ public class LuckyRound {
             msg.writer().writeByte(0);
             msg.writer().writeByte(7);
             for (int i = 0; i < 7; i++) {
-                msg.writer().writeShort(15313);
+                msg.writer().writeShort(8579 + i);
             }
             msg.writer().writeByte(type); //type price
             msg.writer().writeInt(PRICE_TICKET); //price

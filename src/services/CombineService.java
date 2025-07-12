@@ -398,7 +398,7 @@ public class CombineService {
     // Sách tuyet ki
     public boolean issachTuyetKy(Item item) {
         if (item != null && item.isNotNullItem()) {
-            if (item.template.type == 35) {
+            if (item.template.type == 35 && item.template.id != 1044) {
                 return true;
             } else {
                 return false;
