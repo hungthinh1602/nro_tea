@@ -841,14 +841,15 @@ public class Mob {
         }
         //Úp quái rơi ngọc
         if (Util.isTrue(2, 10000) || (player.isActive() && Util.isTrue(2, 1000))) {
-            list.add(new ItemMap(zone, 77, 1, x, yEnd, player.id));
+            int rand_ngoc = Util.nextInt(1, 3);
+            list.add(new ItemMap(zone, 77, rand_ngoc, x, yEnd, player.id));
         }
         //1188: trang giay cũ
-        if (Util.isTrue(2, 5000) || (player.isActive() && Util.isTrue(5, 1000))) {
+        if (Util.isTrue(2, 5000) || (player.isActive() && Util.isTrue(10, 1000))) {
             list.add(new ItemMap(zone, 1188, 1, x, yEnd, player.id));
         }
         //1191: bí kiếp
-        if (Util.isTrue(2, 5000) || (player.isActive() && Util.isTrue(1, 2000))) {
+        if (Util.isTrue(2, 5000) || (player.isActive() && Util.isTrue(10, 2000))) {
             list.add(new ItemMap(zone, 1191, 1, x, yEnd, player.id));
         }
 //        if (Util.isTrue(1, 10000) || (player.isActive() && Util.isTrue(1, 2000))) {
