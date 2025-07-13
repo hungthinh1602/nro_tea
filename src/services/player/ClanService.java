@@ -322,7 +322,7 @@ public class ClanService {
      */
     private void acceptJoinClan(Player player, int clanId) {
         try {
-            if (!Util.canDoWithTime(player.lastTimeLeaveClan, 600000)) {
+            if (!Util.canDoWithTime(player.lastTimeLeaveClan, 60000)) {
                 Service.gI().sendThongBao(player, "Sau khi rời bang, " + Util.msToTime(player.lastTimeRemoveClan + (1000 * 60 * 60)) + " sau mới được phép gia nhập.");
                 return;
             }
