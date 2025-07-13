@@ -12,11 +12,15 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/models/npc/npc_list/BaHatMit.java</file>
-            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/models/combine/list/NangCapSachTuyetKi.java</file>
-            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/services/CombineService.java</file>
-            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/server/Command.java</file>
-            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/services/ShopService.java</file>
+            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/models/boss/boss_list/MajinBuu12H/Mabu.java</file>
+            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/models/map/Boss10.java</file>
+            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/services/player/ClanService.java</file>
+            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/models/boss/boss_list/MajinBuu14H/Mabu2H.java</file>
+            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/models/boss/boss_list/MajinBuu14H/SuperBu.java</file>
+            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/models/boss/boss_list/SuperRank/Rival.java</file>
+            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/models/npc/npc_list/Tapion.java</file>
+            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/models/boss/BossesData.java</file>
+            <file>file:/C:/Users/Admin/Documents/ADM%20NRO/TEA1/TEA1/src/Bot/Sanb.java</file>
         </group>
     </open-files>
 </project-private>

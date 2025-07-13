@@ -658,6 +658,22 @@ public class Mob {
                 list.add(new ItemMap(zone, 190, vang, x, yEnd, player.id));
             }
         }
+        
+                //vang roi doanh trai doc nhan
+        if (mapid >= 53 && mapid <= 62) {
+            int vang = Util.nextInt(30000, 50000);
+            if (player.nPoint.tlGold > 0) {
+                vang += vang * player.nPoint.tlGold / 100;
+            }
+            if (vang < 20000) {
+                list.add(new ItemMap(zone, 189, vang, x, yEnd, player.id));
+            } else if (vang < 30000) {
+                list.add(new ItemMap(zone, 188, vang, x, yEnd, player.id));
+            } else {
+                list.add(new ItemMap(zone, 190, vang, x, yEnd, player.id));
+            }
+        }
+        
         if (player.isPl() && Util.isTrue(1, 2000) && MapService.gI().isMapUpSKH(mapid)) {
             short itTemp = (short) ItemService.gI().randTempItemKichHoat(player.gender);
             ItemMap it = new ItemMap(zone, itTemp, 1, x, yEnd, player.id);
