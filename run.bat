@@ -1,5 +1,6 @@
 @ECHO OFF
 
-java -server -jar -Dfile.encoding=UTF-8 -Xms1000M -Xmx1000M dist/NGOC_RONG_ONLINE.jar
+java -server -Xms1000M -Xmx1000M -Dfile.encoding=UTF-8 -cp "dist/NGOC_RONG_ONLINE.jar;lib/*" server.ServerManager
+
 
 PAUSE

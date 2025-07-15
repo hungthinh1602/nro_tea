@@ -867,7 +867,7 @@ public class Mob {
             list.add(new ItemMap(zone, 1188, 1, x, yEnd, player.id));
         }
         //1191: bí kiếp
-        if (Util.isTrue(30, 2000) || (player.isActive() && Util.isTrue(30, 2000))) {
+        if (Util.isTrue(10, 2000) || (player.isActive() && Util.isTrue(10, 2000))) {
             list.add(new ItemMap(zone, 1191, 1, x, yEnd, player.id));
         }
 //        if (Util.isTrue(1, 10000) || (player.isActive() && Util.isTrue(1, 2000))) {
