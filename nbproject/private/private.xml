@@ -12,9 +12,15 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Administrator/Downloads/NRO/nro_tea/src/services/player/ClanService.java</file>
             <file>file:/C:/Users/Administrator/Downloads/NRO/nro_tea/src/models/mob/Mob.java</file>
             <file>file:/C:/Users/Administrator/Downloads/NRO/nro_tea/src/models/boss/boss_list/RedRibbonHQ/NinjaAoTim.java</file>
+=======
+            <file>file:/C:/Users/Administrator/Downloads/NRO/nro_tea/src/models/boss/boss_list/RedRibbonHQ/NinjaAoTim.java</file>
+            <file>file:/C:/Users/Administrator/Downloads/NRO/nro_tea/src/models/mob/Mob.java</file>
+            <file>file:/C:/Users/Administrator/Downloads/NRO/nro_tea/src/services/player/ClanService.java</file>
+>>>>>>> 05abb03aa5d2abd908ea9778bd79bcee80ef74c3
         </group>
     </open-files>
 </project-private>

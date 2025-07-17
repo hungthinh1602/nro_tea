@@ -54,9 +54,9 @@ public class TrungUyXanhLo extends Boss {
             ItemMap it = new ItemMap(this.zone, Util.nextInt(18, 20), 1, this.location.x, this.zone.map.yPhysicInTop(this.location.x,
                     this.location.y - 24), plKill.id);
             Service.gI().dropItemMap(this.zone, it);
-            it = new ItemMap(this.zone, 611, Util.nextInt(0, 1), this.location.x, this.zone.map.yPhysicInTop(this.location.x,
+            ItemMap it2 = new ItemMap(this.zone, 611, Util.nextInt(0, 1), this.location.x, this.zone.map.yPhysicInTop(this.location.x,
                     this.location.y - 24), plKill.id);
-            Service.gI().dropItemMap(this.zone, it);
+            Service.gI().dropItemMap(this.zone, it2);
         }
     }
 
